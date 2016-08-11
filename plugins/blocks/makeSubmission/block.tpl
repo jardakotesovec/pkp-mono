@@ -9,7 +9,7 @@
  *}
 <div class="pkp_block block_make_submission">
 	<div class="content">
-		<a class="cmp_button" href="{url router=$smarty.const.ROUTE_PAGE page="about" op="submissions"}">
+		<a class="block_make_submission_link" href="{url router=$smarty.const.ROUTE_PAGE page="about" op="submissions"}">
 			{translate key="plugins.block.makeSubmission.linkLabel"}
 		</a>
 	</div>
