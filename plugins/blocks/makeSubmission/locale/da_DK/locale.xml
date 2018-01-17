@@ -12,7 +12,7 @@
   -->
 
 <locale name="da_DK" full_name="Dansk">
-	<message key="plugins.block.makeSubmission.displayName">"Foretag en indsendelse" (blok)</message>
+	<message key="plugins.block.makeSubmission.displayName">"Indsend" (blok)</message>
 	<message key="plugins.block.makeSubmission.description">Dette plug-in indsætter sidemenu-linket "Foretag en indsendelse"</message>
-	<message key="plugins.block.makeSubmission.linkLabel">"Foretag en indsendelse"</message>
+	<message key="plugins.block.makeSubmission.linkLabel">Indsend</message>
 </locale>
