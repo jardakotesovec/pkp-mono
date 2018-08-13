@@ -13,6 +13,6 @@
 
 <locale name="cs_CZ" full_name="Čeština">
 	<message key="plugins.block.makeSubmission.displayName">Blok "Odeslat příspěvek"</message>
-	<message key="plugins.block.makeSubmission.description">Tento plugin poskytuje blok v postranním sloupci s odkazem na "Odeslat příspěvek"</message>
-	<message key="plugins.block.makeSubmission.linkLabel">Odeslat příspěvek</message>
+	<message key="plugins.block.makeSubmission.description">Tento plugin obsluhuje blok "Odeslat příspěvek" v postranním sloupci"</message>
+	<message key="plugins.block.makeSubmission.linkLabel">On-line odeslání příspěvku do časopisu</message>
 </locale>
