@@ -14,4 +14,5 @@
 <locale name="it_IT" full_name="Italiano">
 	<message key="plugins.block.makeSubmission.displayName">Blocco "Fai una proposta"</message>
 	<message key="plugins.block.makeSubmission.description">Questo plugin fornisce un link "Fai una proposta" nel menu laterale.</message>
+	<message key="plugins.block.makeSubmission.linkLabel">Fai una proposta</message>
 </locale>
