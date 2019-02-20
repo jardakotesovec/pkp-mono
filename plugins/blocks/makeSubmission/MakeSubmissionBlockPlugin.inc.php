@@ -32,6 +32,15 @@ class MakeSubmissionBlockPlugin extends BlockPlugin {
 	function getDescription() {
 		return __('plugins.block.makeSubmission.description');
 	}
-}
 
-?>
+	/**
+	 * @copydoc BlockPlugin::getContents()
+	 */
+	function getContents($templateMgr, $request = null) {
+		$context = $request->getContext();
+		if (!$context) {
+			return '';
+		}
+		return parent::getContents($templateMgr);
+	}
+}
