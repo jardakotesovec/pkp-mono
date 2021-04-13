@@ -17,30 +17,37 @@
 
 import('lib.pkp.classes.plugins.BlockPlugin');
 
-class MakeSubmissionBlockPlugin extends BlockPlugin {
-	/**
-	 * Get the display name of this plugin.
-	 * @return String
-	 */
-	function getDisplayName() {
-		return __('plugins.block.makeSubmission.displayName');
-	}
+class MakeSubmissionBlockPlugin extends BlockPlugin
+{
+    /**
+     * Get the display name of this plugin.
+     *
+     * @return String
+     */
+    public function getDisplayName()
+    {
+        return __('plugins.block.makeSubmission.displayName');
+    }
 
-	/**
-	 * Get a description of the plugin.
-	 */
-	function getDescription() {
-		return __('plugins.block.makeSubmission.description');
-	}
+    /**
+     * Get a description of the plugin.
+     */
+    public function getDescription()
+    {
+        return __('plugins.block.makeSubmission.description');
+    }
 
-	/**
-	 * @copydoc BlockPlugin::getContents()
-	 */
-	function getContents($templateMgr, $request = null) {
-		$context = $request->getContext();
-		if (!$context) {
-			return '';
-		}
-		return parent::getContents($templateMgr);
-	}
+    /**
+     * @copydoc BlockPlugin::getContents()
+     *
+     * @param null|mixed $request
+     */
+    public function getContents($templateMgr, $request = null)
+    {
+        $context = $request->getContext();
+        if (!$context) {
+            return '';
+        }
+        return parent::getContents($templateMgr);
+    }
 }
