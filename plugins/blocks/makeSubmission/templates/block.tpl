@@ -13,7 +13,7 @@
 	</h2>
 
 	<div class="content">
-		<a class="block_make_submission_link" href="{url router=$smarty.const.ROUTE_PAGE page="about" op="submissions"}">
+		<a class="block_make_submission_link" href="{url router=PKPApplication::ROUTE_PAGE page="about" op="submissions"}">
 			{translate key="plugins.block.makeSubmission.linkLabel"}
 		</a>
 	</div>
