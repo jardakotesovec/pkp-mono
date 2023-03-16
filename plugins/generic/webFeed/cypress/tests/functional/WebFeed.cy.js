@@ -8,7 +8,7 @@
  */
 
 describe('Web Feed plugin tests', () => {
-	const feedSize = 3;
+	const feedSize = 2;
 	it('The side bar and the feeds are displayed properly', () => {
 		cy.login('admin', 'admin', 'publicknowledge');
 
