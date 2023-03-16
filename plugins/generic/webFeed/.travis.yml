@@ -38,6 +38,7 @@ install:
   # Build/install dependencies
   - lib/pkp/tools/travis/install-composer-dependencies.sh
   - npm i g -npm && npm install --silent && npm run build
+  - rm -rf ~/${APPLICATION}/plugins/generic/webFeed
   - ln -s ${TRAVIS_BUILD_DIR} ~/${APPLICATION}/plugins/generic/webFeed
 
 script:
