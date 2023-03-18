@@ -40,12 +40,9 @@ install:
   # The script below requires these extra variables
   - export DBTYPE_SYMBOLIC=${TEST}
   - export APP=${APPLICATION}
-  # Ensure the public folder exist and that it has at least one file
-  - mkdir -p ~/datasets/${APPLICATION}/${BRANCH}/${TEST}/public
-  - mktemp ~/datasets/${APPLICATION}/${BRANCH}/${TEST}/public/XXX
   # Load the database/files from the dataset
   - ../datasets/tools/load.sh
-  # Undo configuration update
+  # Undo configuration update from the load.sh
   - sed -i -e "s/^name = ${APP}-${BRANCH}$/name = ${APP}-ci/" config.inc.php
   # Start the server
   - lib/pkp/tools/travis/prepare-webserver.sh
