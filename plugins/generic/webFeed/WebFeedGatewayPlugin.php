@@ -8,6 +8,7 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class WebFeedGatewayPlugin
+ *
  * @brief Gateway component of web feed plugin
  *
  */
@@ -219,6 +220,8 @@ class WebFeedGatewayPlugin extends GatewayPlugin
 
     /**
      * @copydoc Plugin::getEnabled()
+     *
+     * @param null|mixed $contextId
      */
     public function getEnabled($contextId = null): bool
     {

@@ -8,6 +8,7 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class WebFeedPlugin
+ *
  * @brief Web Feeds plugin class
  */
 
@@ -28,6 +29,8 @@ class WebFeedPlugin extends GenericPlugin
 {
     /**
      * @copydoc Plugin::register()
+     *
+     * @param null|mixed $mainContextId
      */
     public function register($category, $path, $mainContextId = null): bool
     {
