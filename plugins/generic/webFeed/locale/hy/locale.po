@@ -2,7 +2,7 @@
 # Tigran Zargaryan <tigran@flib.sci.am>, 2022.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-04-07 12:48+0000\n"
+"PO-Revision-Date: 2023-04-27 17:49+0000\n"
 "Last-Translator: Tigran Zargaryan <tigran@flib.sci.am>\n"
 "Language-Team: Armenian <http://translate.pkp.sfu.ca/projects/plugins/"
 "webFeed/hy/>\n"
@@ -19,7 +19,7 @@ msgstr "Ոստայնի ժապավենի փլագին"
 msgid "plugins.generic.webfeed.description"
 msgstr ""
 "Այս փլագինը արտադրում է RSS/Atom վեբ սինդիկացիոն հոսքեր:<br>Փլագինը ներառում "
-"է նաև կողագոտի մոդուլ, որը թույլ է տալիս ցուցադրել սնուցման հղումները ձեր "
+"է նաև կողագոտի բլոկ, որը թույլ է տալիս ցուցադրել սնուցման հղումները ձեր "
 "հավելվածի կողագոտում"
 
 msgid "plugins.generic.webfeed.settings"
