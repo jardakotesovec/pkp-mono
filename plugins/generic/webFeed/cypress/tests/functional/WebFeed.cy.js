@@ -1,5 +1,5 @@
 /**
- * @file cypress/tests/functional/WebFeed.spec.js
+ * @file cypress/tests/functional/WebFeed.cy.js
  *
  * Copyright (c) 2014-2023 Simon Fraser University
  * Copyright (c) 2000-2023 John Willinsky
