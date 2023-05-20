@@ -1,7 +1,7 @@
 # Cyril Kamburov <cc@intermedia.bg>, 2021, 2023.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-03-26 13:48+0000\n"
+"PO-Revision-Date: 2023-04-27 17:49+0000\n"
 "Last-Translator: Cyril Kamburov <cc@intermedia.bg>\n"
 "Language-Team: Bulgarian <http://translate.pkp.sfu.ca/projects/plugins/"
 "webFeed/bg/>\n"
@@ -18,7 +18,7 @@ msgstr "Плъгин за RSS емисия на броя"
 msgid "plugins.generic.webfeed.description"
 msgstr ""
 "Този плъгин произвежда RSS/Atom уеб синдикална емисия. <br>Плъгинът включва "
-"и модул за странична лента, който ви позволява да показвате връзките към "
+"и блок за странична лента, който ви позволява да показвате връзките към "
 "емисиите в страничната лента на вашето приложение"
 
 msgid "plugins.generic.webfeed.settings"
