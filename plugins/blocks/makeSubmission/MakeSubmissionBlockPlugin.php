@@ -13,18 +13,16 @@
  * @brief Class for the "Make a Submission" block plugin
  */
 
+namespace APP\plugins\blocks\makeSubmission;
 
-
-import('lib.pkp.classes.plugins.BlockPlugin');
+use PKP\plugins\BlockPlugin;
 
 class MakeSubmissionBlockPlugin extends BlockPlugin
 {
     /**
      * Get the display name of this plugin.
-     *
-     * @return String
      */
-    public function getDisplayName()
+    public function getDisplayName(): string
     {
         return __('plugins.block.makeSubmission.displayName');
     }
@@ -32,7 +30,7 @@ class MakeSubmissionBlockPlugin extends BlockPlugin
     /**
      * Get a description of the plugin.
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return __('plugins.block.makeSubmission.description');
     }

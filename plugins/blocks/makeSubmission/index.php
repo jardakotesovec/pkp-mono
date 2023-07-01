@@ -16,6 +16,4 @@
  *
  */
 
-require_once('MakeSubmissionBlockPlugin.inc.php');
-
-return new MakeSubmissionBlockPlugin();
+return new APP\plugins\blocks\makeSubmission\MakeSubmissionBlockPlugin();
