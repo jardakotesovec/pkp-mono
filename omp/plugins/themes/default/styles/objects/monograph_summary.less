@@ -1,0 +1,87 @@
+/**
+ * @file plugins/themes/default/styles/objects/monograph_summary.less
+ *
+ * Copyright (c) 2014-2021 Simon Fraser University
+ * Copyright (c) 2003-2021 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+ *
+ * @brief Styles applying to a summary view of a monograph, used in lists
+ * @link templates/frontend/objects/monograph_summary.tpl
+ */
+.obj_monograph_summary {
+	.pkp_helpers_clear;
+
+	.featured {
+		display: inline-block;
+		margin-bottom: @base;
+		border-bottom: @bg-border;
+		font-size: @font-sml;
+		line-height: @line-sml;
+		color: @text-light;
+	}
+
+	.cover {
+		display: block;
+
+		img {
+			display: block;
+			margin: 0 0 @base;
+			width: auto;
+			height: auto;
+			max-width: 10em;
+			max-height: 20em;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.title {
+		font-family: @font-heading;
+		font-size: @font-base;
+		font-weight: @bold;
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: 0;
+		line-height: @line-base;
+	}
+
+	.author {
+		font-size: @font-sml;
+	}
+
+	.date {
+		padding-top: @half;
+		font-size: @font-sml;
+		line-height: @line-sml;
+		color: @text-light;
+	}
+
+	.seriesPosition {
+		display: block;
+		font-size: @font-base;
+		font-weight: @bold;
+		color: @text-light;
+		padding-bottom: @double;
+	}
+
+	@media(min-width: @screen-tablet) {
+
+		> *, .title {
+			display: block;
+			margin-left: @base * 11;
+		}
+
+		.cover {
+			float: left;
+			width: @base * 8;
+			margin-left: 0;
+
+			img {
+				margin: auto;
+				width: 100%;
+			}
+		}
+	}
+}

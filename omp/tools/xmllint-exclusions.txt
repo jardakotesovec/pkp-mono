@@ -1,0 +1,12 @@
+./files/
+./tests/
+./lib/pkp/tests/phpunit.xml
+./lib/pkp/tests/classes/xslt
+./plugins/paymethod/paypal/vendor
+./lib/pkp/lib
+./plugins/generic/citationStyleLanguage/lib/vendor
+./plugins/importexport/users/sample.xml
+./plugins/importexport/native/sample.xml
+./lib/pkp/js/lib/plupload
+./node_modules
+./lib/ui-library/node_modules

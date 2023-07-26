@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+
+<!--
+  * plugins/importexport/native/native.xsd
+  *
+  * Copyright (c) 2014-2021 Simon Fraser University
+  * Copyright (c) 2003-2021 John Willinsky
+  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+  *
+  * Schema describing native XML import/export elements specific to OMP
+  -->
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://pkp.sfu.ca" xmlns:pkp="http://pkp.sfu.ca" xmlns:onix="http://ns.editeur.org/onix/3.0/reference" elementFormDefault="qualified">
+
+	<!--
+	  - Base the native import/export schema on the PKP submission model.
+	  -->
+	<include schemaLocation="../../../lib/pkp/plugins/importexport/native/pkp-native.xsd" />
+	<import namespace="http://ns.editeur.org/onix/3.0/reference" schemaLocation="ONIX_BookProduct_3.0_reference_notstrict.xsd" />
+
+	<!-- Allow the use of "monograph" in place of "submission" -->
+	<element name="monograph" substitutionGroup="pkp:submission">
+		<complexType>
+			<complexContent>
+				<extension base="pkp:submission">
+					<attribute name="work_type" type="int" />
+					<attribute name="stage" use="required">
+						<simpleType>
+							<restriction base="string">
+								<enumeration value="submission" />
+								<enumeration value="internalReview" />
+								<enumeration value="externalReview" />
+								<enumeration value="editorial" />
+								<enumeration value="production" />
+							</restriction>
+						</simpleType>
+					</attribute>
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="monographs" substitutionGroup="pkp:submissions" />
+	<element name="Product" substitutionGroup="onix:Product" />
+
+	<complexType name="ompseries">
+		<sequence>
+			<element ref="pkp:id" minOccurs="0" maxOccurs="unbounded" />
+			<!-- Metadata -->
+			<element name="title" type="pkp:localizedNode" minOccurs="0" maxOccurs="unbounded" />
+			<element name="subtitle" type="pkp:localizedNode" minOccurs="0" maxOccurs="unbounded" />
+			<element name="description" type="pkp:localizedNode" minOccurs="0" maxOccurs="unbounded" />
+			<element name="printIssn" type="string" minOccurs="0" maxOccurs="1" />
+			<element name="onlineIssn" type="string" minOccurs="0" maxOccurs="1" />
+			<element name="path" type="string" minOccurs="0" maxOccurs="unbounded" />
+			<element name="sequence" type="string" minOccurs="0" maxOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<element name="series" type="pkp:ompseries" />
+
+	<complexType name="ojschapter">
+		<sequence>
+			<element ref="pkp:id" minOccurs="0" maxOccurs="unbounded" />
+			<!-- Metadata -->
+			<element name="title" type="pkp:localizedNode" minOccurs="0" maxOccurs="unbounded" />
+			<element name="abstract" type="pkp:localizedNode" minOccurs="0" maxOccurs="unbounded" />
+			<element name="subtitle" type="pkp:localizedNode" minOccurs="0" maxOccurs="unbounded" />
+			<element name="pages" type="string" minOccurs="0" maxOccurs="1" />
+			<element name="chapterAuthor" minOccurs="0" maxOccurs="unbounded" >
+				<complexType>
+					<attribute name="author_id" type="int" use="required" />
+					<attribute name="seq" type="int" use="required" />
+				</complexType>
+			</element>
+			<element name="submission_file_ref" type="pkp:submission_file_ref" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+		<attribute name="seq" type="int" use="required" />
+		<attribute name="id" type="int" use="required" />
+	</complexType>
+
+	<element name="chapter" type="pkp:ojschapter" />
+
+	<element name="chapters">
+		<complexType>
+			<sequence>
+				<element ref="pkp:chapter" minOccurs="1" maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<!-- Permit "citation" as a root element to keep the filters happy -->
+	<element name="citation" type="string" />
+
+	<element name="publication" substitutionGroup="pkp:pkppublication">
+		<complexType>
+			<complexContent>
+				<extension base="pkp:pkppublication">
+					<sequence>
+						<element ref="pkp:series" maxOccurs="1" minOccurs="0" />
+						<element ref="pkp:chapters" maxOccurs="1" minOccurs="0" />
+						<element ref="pkp:covers" minOccurs="0" maxOccurs="1" />
+					</sequence>
+					<attribute name="series" type="normalizedString" />
+					<attribute name="series_position" type="normalizedString" />
+					<attribute name="seq" type="int" />
+					<attribute name="access_status" type="int" />
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+
+	<!-- Configure the use of the "publication_format" representation -->
+	<element name="publication_format" substitutionGroup="pkp:representation">
+		<complexType>
+			<complexContent>
+				<extension base="pkp:representation">
+					<sequence>
+						<element maxOccurs="1" minOccurs="0" name="Product"/>
+					</sequence>
+					<attribute name="approved" type="boolean"/>
+					<attribute name="available" type="boolean"/>
+					<attribute name="physical_format" type="boolean"/>
+					<attribute name="entry_key" type="string" use="optional" />
+				</extension>
+			</complexContent>
+		</complexType>
+	</element>
+
+	<element name="covers">
+		<complexType>
+			<sequence>
+				<element ref="pkp:cover" minOccurs="1" maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="cover">
+		<complexType>
+			<sequence>
+				<element name="cover_image" type="string" minOccurs="1" maxOccurs="1" />
+				<element name="cover_image_alt_text" type="string" minOccurs="1" maxOccurs="1" />
+				<element name="embed" type="pkp:embed" />
+			</sequence>
+			<attribute name="locale" type="string" />
+		</complexType>
+	</element>
+</schema>

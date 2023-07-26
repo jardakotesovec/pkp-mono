@@ -1,0 +1,151 @@
+/**
+ * @file plugins/themes/default/styles/pages/viewFile.less
+ *
+ * Copyright (c) 2014-2021 Simon Fraser University
+ * Copyright (c) 2003-2021 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+ *
+ * @brief Styles applying to the lightweight page for viewing PDFs
+ * @link templates/frontend/pages/viewPdf.tpl
+ */
+
+.header_viewable_file {
+	z-index: 2;
+	position: relative;
+	background: @primary;
+	line-height: @line-header;
+
+	a {
+		text-decoration: none;
+	}
+
+	.return {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: @line-header;
+		height: @line-header;
+		line-height: @line-header;
+		color: @primary;
+		text-align: center;
+		background: @bg;
+
+		&:before {
+			.fa();
+			content: @fa-var-arrow-left;
+		}
+
+		&:hover,
+		&:focus {
+			background: @primary-lift;
+			color: #fff;
+		}
+	}
+
+	.title,
+	.download {
+		display: block;
+		font-size: @font-sml;
+		font-weight: @bold;
+	}
+
+	.title {
+		padding-left: @line-header + @base;
+		max-width: 100%;
+		overflow-x: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		color: #fff;
+	}
+
+	.download {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: @line-header;
+		text-align: center;
+		background: @bg;
+
+		&:hover,
+		&:focus {
+			background: @primary-lift;
+			color: #fff;
+		}
+
+		&:before {
+			.fa();
+			content: @fa-var-download;
+		}
+
+		.label {
+			position: absolute;
+			top: 0;
+			left: -9999px;
+		}
+	}
+
+	@media(min-width: @screen-tablet) {
+
+		.download {
+			width: auto;
+			padding: 0 @double;
+
+			.label {
+				position: relative;
+				top: auto;
+				left: auto;
+			}
+
+			&:before {
+				margin-right: 0.5em;
+			}
+		}
+	}
+}
+
+.viewable_file_frame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: hidden;
+
+	iframe {
+		width: 100%;
+		height: 100%;
+		padding-top: @line-header;
+		border: none;
+	}
+
+	&.viewable_file_frame_with_notice {
+
+		iframe {
+			padding-top: @line-header * 3;
+		}
+	}
+
+	.viewable_file_frame_notice {
+		position: absolute;
+		top: @line-header;
+		width: 100%;
+		height: @line-header * 2;
+		background: @no;
+	}
+
+	.viewable_file_frame_notice_message {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+		color: @text-bg-base;
+		font-weight: @bold;
+		text-align: center;
+
+		a {
+			color: @text-bg-base;
+			text-decoration: underline;
+		}
+	}
+}
