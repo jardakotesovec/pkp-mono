@@ -66,24 +66,18 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"PKP\\controllers\\": "controllers/",
-			"APP\\controllers\\": "../../controllers/",
-			"PKP\\API\\": "api/",
-			"APP\\API\\": "../../api/",
-			"PKP\\pages\\": "pages/",
-			"APP\\pages\\": "../../pages/",
-			"PKP\\": "classes/",
-			"APP\\": "../../classes/",
-			"PKP\\plugins\\": "plugins/",
-			"APP\\plugins\\": "../../plugins/",
-			"PKP\\jobs\\": "jobs/",
-			"APP\\jobs\\": "../../jobs/"
+            "PKP\\controllers\\": "controllers/",
+            "PKP\\API\\": "api/",
+            "PKP\\pages\\": "pages/",
+            "PKP\\": "classes/",
+            "PKP\\plugins\\": "plugins/",
+            "PKP\\jobs\\": "jobs/"
 		}
 	},
 	"autoload-dev": {
 		"psr-4": {
 			"PKP\\tests\\": "tests/",
-			"APP\\tests\\": "../../tests/"
+			"APP\\tests\\": "../ojs/tests/"
 		}
 	}
 }

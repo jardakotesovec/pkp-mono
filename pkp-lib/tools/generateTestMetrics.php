@@ -13,8 +13,8 @@
  *
  * @brief Generate example metric data.
  */
-
-require(dirname(__FILE__, 4) . '/tools/bootstrap.php');
+define('PKP_APP', 'ojs'); // FIX ME DETECT APP
+require(getcwd() . '/tools/bootstrap.php');
 
 use APP\core\Application;
 use APP\facades\Repo;
